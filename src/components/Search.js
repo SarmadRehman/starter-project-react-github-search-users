@@ -5,13 +5,16 @@ import { GithubContext } from '../context/context';
 
 
 const Search = () => {
-  const { requests, error } = React.useContext(GithubContext);
+  const { requests, error, searchGithubUser } = React.useContext(GithubContext);
   console.log(requests);
   const[user, setUser] = React.useState('');
   // get things from global context
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user) ;
+    if(user){
+      searchGithubUser(user);
+    }
+     ;
   };
   return (
     <section className='section'>
