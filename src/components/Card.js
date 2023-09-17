@@ -19,7 +19,8 @@ const Card = () => {
       <img src={avatar_url} alt={name}></img>
         <div>
       <h4>{name}</h4>
-      <p>@{twitter_username || 'Sarmad Rehman'}</p>
+      <p>@{twitter_username || (name === 'Sarmad Rehman' && 'SarmadRehman')}</p>
+
     </div>
     <a href={html_url}>follow</a>
     </header>
